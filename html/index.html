@@ -32,7 +32,10 @@
     --ease-out:  cubic-bezier(.16,1,.3,1);
   }
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* impede scroll lateral em iOS Safari */
+  }
   body {
     margin: 0;
     background: var(--paper);
@@ -40,6 +43,7 @@
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    max-width: 100vw; /* garante que nada vaze além da viewport */
   }
   img, video { max-width: 100%; display: block; }
   a { color: inherit; }
@@ -590,6 +594,12 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: var(--line) transparent;
+    /* Isola o scroll horizontal do carousel para não arrastar a página */
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    /* Previne que o rail vaze além da tela */
+    max-width: 100vw;
+    box-sizing: border-box;
   }
   .shelf-rail::-webkit-scrollbar { height: 4px; }
   .shelf-rail::-webkit-scrollbar-thumb { background: var(--panel-dk); border-radius: 10px; }
