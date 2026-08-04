@@ -1044,19 +1044,17 @@
     display: flex;
     align-items: center;
     gap: 18px;
-    background: rgba(255,255,255,.1);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,.2);
+    background: #fff;
     border-radius: 16px;
     padding: 22px 24px;
     text-decoration: none;
-    color: #fff;
+    color: var(--ink);
     cursor: pointer;
-    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    box-shadow: 0 4px 24px rgba(0,0,0,.12);
+    transition: transform .2s ease, box-shadow .2s ease;
   }
   .contact-card:hover {
-    background: rgba(255,255,255,.18);
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     box-shadow: 0 16px 40px rgba(0,0,0,.2);
   }
   .contact-card:active { transform: translateY(-1px); }
@@ -1064,31 +1062,38 @@
     width: 52px; height: 52px; border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    background: rgba(255,255,255,.15);
-    transition: background .2s ease;
+    background: var(--red);
+    color: #fff;
+    transition: opacity .2s ease;
   }
-  .contact-card:hover .contact-card-icon { background: rgba(255,255,255,.25); }
+  .contact-card:hover .contact-card-icon { opacity: .88; }
   .contact-card-icon svg { width: 26px; height: 26px; }
   .contact-card-body { flex: 1; }
   .contact-card-label {
     font-size: 11px; font-family: 'IBM Plex Mono', monospace;
     letter-spacing: .12em; text-transform: uppercase;
-    color: rgba(255,255,255,.65); margin-bottom: 3px;
+    color: rgba(0,0,0,.4); margin-bottom: 3px;
   }
   .contact-card-title {
     font-size: clamp(16px, 2vw, 20px); font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.2; color: var(--ink);
   }
   .contact-card-sub {
-    font-size: 13px; color: rgba(255,255,255,.7); margin-top: 2px;
+    font-size: 13px; color: rgba(0,0,0,.45); margin-top: 2px;
   }
-  .contact-card-arrow {
-    opacity: .5;
-    transition: opacity .2s ease, transform .2s ease;
+  .contact-card-arrow-wrap {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    background: var(--red);
+    color: #fff;
+    transition: background .2s ease, transform .2s ease;
   }
-  .contact-card:hover .contact-card-arrow {
-    opacity: 1; transform: translateX(4px);
+  .contact-card:hover .contact-card-arrow-wrap {
+    background: color-mix(in srgb, var(--red) 85%, #000);
+    transform: translateX(4px);
   }
+  .contact-card-arrow { display: block; }
   /* Responsive */
   @media (max-width: 767px) {
     .final .wrap {
@@ -1642,9 +1647,11 @@
             <div class="contact-card-title">WhatsApp</div>
             <div class="contact-card-sub">(81) 99292-1970</div>
           </div>
-          <svg class="contact-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
+          <div class="contact-card-arrow-wrap">
+            <svg class="contact-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
 
         <!-- Instagram Card -->
@@ -1659,9 +1666,11 @@
             <div class="contact-card-title">Instagram</div>
             <div class="contact-card-sub">@pdvmix</div>
           </div>
-          <svg class="contact-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
+          <div class="contact-card-arrow-wrap">
+            <svg class="contact-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
 
       </div>
