@@ -623,6 +623,64 @@
     pointer-events: none; /* evita ativação acidental do vídeo no mobile */
   }
 
+  /* Instagram CTA ao fim da vitrine */
+  .shelf-insta-cta {
+    padding: 0 28px 40px;
+    margin-top: 8px;
+  }
+  .shelf-insta-cta-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    padding: 16px 20px;
+    max-width: 640px;
+    flex-wrap: wrap;
+  }
+  .shelf-insta-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .shelf-insta-text {
+    display: flex; flex-direction: column; gap: 2px; flex: 1;
+  }
+  .shelf-insta-label {
+    font-family: 'Archivo', sans-serif;
+    font-size: 14px; font-weight: 700;
+    color: rgba(255,255,255,.9);
+  }
+  .shelf-insta-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,.45);
+    line-height: 1.4;
+  }
+  .shelf-insta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: opacity .18s ease, transform .18s ease;
+    flex-shrink: 0;
+  }
+  .shelf-insta-btn:hover {
+    opacity: .85;
+    transform: translateY(-1px);
+  }
+
   .shelf-card {
     flex: none; width: 220px; scroll-snap-align: start;
     background: #fff;
@@ -1316,6 +1374,27 @@
       arraste pra ver mais · clique para abrir
     </div>
     <div class="shelf-rail reveal" id="shelf-rail"></div>
+
+    <!-- CTA Instagram -->
+    <div class="shelf-insta-cta reveal">
+      <div class="shelf-insta-cta-inner">
+        <div class="shelf-insta-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <div class="shelf-insta-text">
+          <span class="shelf-insta-label">Quer ver mais?</span>
+          <span class="shelf-insta-sub">Modelos reais, bastidores e lançamentos no Instagram</span>
+        </div>
+        <a href="https://www.instagram.com/pdvmix/" target="_blank" rel="noopener" class="shelf-insta-btn">
+          @pdvmix
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- ====================================================
